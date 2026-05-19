@@ -45,3 +45,21 @@ The platform was designed to:
 
 ```text
 Submit Idea → Discussion → Feasibility Check → Final Selection
+---
+
+# 🚀 Project Leads
+
+| Name | Role |
+|------|------|
+| [Akmal Ashique](https://github.com/akmalashiquepv-debug) | Project Lead · UI/UX · Platform Development |
+| Akshay Raj PV | Project Lead · Development & Collaboration |
+
+---
+
+Code Crafters Club · Department of BCA
+
+---
+
+# 💡 Final Note
+
+> “Not just a club — a system to turn student ideas into real-world products.”
