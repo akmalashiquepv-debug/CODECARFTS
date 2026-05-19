@@ -1,0 +1,76 @@
+{
+  "name": "IdeaSubmission",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Student's full name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Student's email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Student's phone number"
+    },
+    "idea_title": {
+      "type": "string",
+      "description": "Title of the idea"
+    },
+    "idea_description": {
+      "type": "string",
+      "description": "Detailed description of the idea"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "under_review",
+        "selected",
+        "rejected"
+      ],
+      "default": "submitted",
+      "description": "Current status of the submission"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "idea_title",
+    "idea_description"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
